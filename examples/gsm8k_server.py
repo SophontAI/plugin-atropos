@@ -70,11 +70,11 @@ class GSM8kEnv(BaseEnv):
         )
         server_configs = [
             APIServerConfig(
-                base_url="http://localhost:9001",
+                base_url="http://localhost:9001/v1/",
                 api_key="x",
                 num_requests_for_eval=256,
                 model_name="Qwen/Qwen3-4B",
-                server_type="trl",
+                #server_type="trl",
             ),
         ]
         return env_config, server_configs

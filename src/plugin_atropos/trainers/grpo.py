@@ -393,6 +393,8 @@ class AtroposGRPOTrainer(SchedulerMixin, GRPOTrainer):
         completion_mask = consolidated_inputs["completion_mask"].squeeze(0)
         advantages = consolidated_inputs["advantages"].squeeze(0)
 
+        print(f"prompt_ids shape: {prompt_ids.shape}")
+        print(f"completion_ids shape: {completion_ids.shape}")
         prompt_completion_ids = torch.cat([prompt_ids, completion_ids], dim=1)
         # Concatenate prompt_mask with completion_mask for logit computation
         attention_mask = torch.cat([prompt_mask, completion_mask], dim=1)  # (B, P+C)

@@ -24,7 +24,7 @@ accelerator_config:
   dispatch_batches: true  # must be used, or multiple workers fetching datasets will "lose" data
   split_batches: true
 
-output_dir: /workspace/data/axolotl-artifacts/atropos-example
+output_dir: workspace/data/axolotl-artifacts/atropos-example
 micro_batch_size: 8
 gradient_accumulation_steps: 2
 gradient_checkpointing: "offload"
@@ -36,7 +36,7 @@ datasets:
   - type: atropos
     path: placeholder
 plugins:
-  - "axolotl.integrations.cut_cross_entropy.CutCrossEntropyPlugin"
+#  - "axolotl.integrations.cut_cross_entropy.CutCrossEntropyPlugin"
   - "plugin_atropos.AtroposPlugin"
 
 logging_steps: 1

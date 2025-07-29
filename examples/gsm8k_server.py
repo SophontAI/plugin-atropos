@@ -57,8 +57,8 @@ class GSM8kEnv(BaseEnv):
     @classmethod
     def config_init(cls) -> Tuple[BaseEnvConfig, List[APIServerConfig]]:
         env_config = BaseEnvConfig(
-            tokenizer_name="Qwen/Qwen3-4B",
-            group_size=8,
+            tokenizer_name="Qwen/Qwen2.5-7B-Instruct",
+            group_size=16,
             use_wandb=True,
             rollout_server_url="http://localhost:8000",
             total_steps=1000,
@@ -73,7 +73,7 @@ class GSM8kEnv(BaseEnv):
                 base_url="http://localhost:9001/v1/",
                 api_key="x",
                 num_requests_for_eval=256,
-                model_name="Qwen/Qwen3-4B",
+                model_name="Qwen/Qwen2.5-7B-Instruct",
                 #server_type="trl",
             ),
         ]
